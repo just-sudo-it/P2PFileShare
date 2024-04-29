@@ -45,5 +45,28 @@ This project implements a simple peer-to-peer (P2P) file sharing system using Ja
 2. Start the Peer:
    ```bash
    java Peer
-   
- 
+
+
+
+## Usage
+Register: Peers must register with a unique username to participate.
+Login: After registration, peers must login to interact with the system.
+Inform and Query: Once logged in, peers must inform the tracker about their files and may query available files.
+Download: Peers can download files directly from other peers after querying the Tracker for the required details.
+
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+To contribute:
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+Project Lead - [just-sudo-it](mailto:lefteris.michailides@gmail.com)
+
+Project Link: [https://github.com/just-sudo-it/P2PFileShare](https://github.com/just-sudo-it/P2PFileShare)
