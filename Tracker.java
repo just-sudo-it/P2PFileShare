@@ -97,11 +97,21 @@ public class Tracker {
         }
 
         private void handleInform(Request request, ObjectOutputStream output) throws IOException {
-            // Implement how peers inform the tracker about their files
+            String username = request.getUsername();
+            FileInfo fileInfo = (FileInfo) request.getData();  
+            filesAvailable.computeIfAbsent(fileInfo.fileName, k -> new ConcurrentHashMap<>())
+                          .put(username, fileInfo);
+            output.writeObject(new Response("SUCCESS", "File information updated successfully."));
         }
 
         private void handleQuery(Request request, ObjectOutputStream output) throws IOException {
-            // Handle file query operations
+            String fileName = request.getData().toString();  // Assuming the file name is passed as data
+            if (filesAvailable.containsKey(fileName)) {
+                ConcurrentHashMap<String, FileInfo> fileOwners = filesAvailable.get(fileName);
+                output.writeObject(new Response("SUCCESS", "File is available.", fileOwners.keySet()));
+            } else {
+                output.writeObject(new Response("ERROR", "File not available."));
+            }
         }
     }
 
