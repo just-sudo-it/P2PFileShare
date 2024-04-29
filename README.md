@@ -23,7 +23,7 @@ This project implements a simple peer-to-peer (P2P) file sharing system using Ja
 
 2. Navigate to the project directory:
    ```bash
-cd p2p-file-sharing
+   cd p2p-file-sharing
 
 
 ### Running the Tracker
